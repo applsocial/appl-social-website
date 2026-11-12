@@ -213,6 +213,12 @@ footer{justify-content:center;column-gap:40px;text-align:center}
   .includes li{padding:8px 0;font-size:.86rem;grid-template-columns:18px 1fr}
   .includes i{font-size:1.05rem}
   .includes .fine{font-size:.78rem}
+  .covlist>.k,.includes>.k{display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+  .covlist>.k::after,.includes>.k::after{content:"+";font-size:1.25rem;line-height:1;font-weight:700;letter-spacing:0}
+  .covlist.open>.k::after,.includes.open>.k::after{content:"−"}
+  .covlist:not(.open)>ul,.covlist:not(.open)>.fine,.includes:not(.open)>ul,.includes:not(.open)>.fine{display:none}
+  .covlist:not(.open),.includes:not(.open){padding-block:18px}
+  .covlist>.k,.includes>.k{letter-spacing:.1em;font-size:.66rem;white-space:nowrap}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -424,6 +430,11 @@ footer{justify-content:center;column-gap:40px;text-align:center}
 const tabs=[...document.querySelectorAll('[role=tab]')];
 function sel(tb){tabs.forEach(x=>{const on=x===tb;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;document.getElementById(x.id==='tab-wed'?'cov-wed':'cov-evt').hidden=!on;const h=document.querySelector('.swipe-hint[data-for='+x.getAttribute('aria-controls')+']');if(h)h.hidden=!on;});}
 tabs.forEach((tb,i)=>{tb.addEventListener('click',()=>sel(tb));tb.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus();}});});
+document.querySelectorAll('.covlist>.k,.includes>.k').forEach(k=>{
+  k.setAttribute('role','button');k.setAttribute('tabindex','0');k.setAttribute('aria-expanded','false');
+  const t=()=>{const b=k.parentElement;const o=b.classList.toggle('open');k.setAttribute('aria-expanded',o)};
+  k.addEventListener('click',t);k.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
 document.getElementById('copy').addEventListener('click', async () => {
   const out = document.getElementById('copied');
   try { await navigator.clipboard.writeText('social@appl.africa'); out.textContent = 'Copied'; }
