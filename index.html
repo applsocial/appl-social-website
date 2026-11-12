@@ -96,8 +96,9 @@ section{padding-block:clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
 .stat b{font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
 .stat.wide{grid-column:1 / -1}
 #panel-wed .stats{grid-template-columns:1fr}
-#panel-wed .stat{flex-direction:row;align-items:baseline;gap:12px}
-#panel-wed .stat b{min-width:4.2ch;white-space:nowrap}
+#panel-wed .stat{align-items:center;text-align:center;gap:6px;padding:16px 12px}
+#panel-wed .stat b{font-size:1.6rem;white-space:nowrap}
+#panel-wed .stat span{font-size:.8rem}
 .stat small{display:block;font-weight:400;font-size:.75rem;color:var(--ink-soft);margin-top:2px}
 .stat span{font-weight:700;font-size:.78rem;line-height:1.25}
 .cov{border-top:2px solid var(--c);padding-top:14px;display:flex;flex-direction:column;gap:6px;font-size:.88rem;line-height:1.5}
