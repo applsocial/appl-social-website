@@ -180,10 +180,18 @@ footer img{height:22px;width:auto;display:block}
 .enquire .copied:empty{display:none}
 footer{justify-content:center;column-gap:40px;text-align:center}
 
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;justify-items:center;align-items:start}
-.embed{width:100%;max-width:400px}
+.carousel{position:relative}
+.work{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:20px;align-items:flex-start;padding-bottom:8px;scrollbar-width:none}
+.work::-webkit-scrollbar{display:none}
+.work>.embed{flex:0 0 calc((100% - 40px)/3);max-width:none;scroll-snap-align:start;display:flex;justify-content:center}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:2;transition:opacity .2s ease}
+.car-btn svg{width:22px;height:22px}
+.car-btn.prev{left:-24px}
+.car-btn.next{right:-24px}
+.car-btn[disabled]{opacity:0;pointer-events:none}
+@media (max-width:1100px){.car-btn.prev{left:4px}.car-btn.next{right:4px}}
 .work-label{display:block;text-align:center;font-weight:900;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin:8px 0 16px}
-.work + .work-label{margin-top:48px}
+.swipe-hint + .work-label{margin-top:56px}
 .follow{margin-top:40px}
 
 .socials{display:flex;gap:10px;justify-content:center}
@@ -198,6 +206,7 @@ footer{justify-content:center;column-gap:40px;text-align:center}
   .work,.packages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-20px;padding:4px 20px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .work::-webkit-scrollbar,.packages::-webkit-scrollbar{display:none}
   .work>.embed,.packages>.pkg{flex:0 0 86%;scroll-snap-align:center}
+  .car-btn{display:none}
   .packages[hidden]{display:none!important}
   .swipe-hint{display:block;text-align:center;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:6px 0 0}
   .tt-desktop{display:none!important}
@@ -259,17 +268,29 @@ footer{justify-content:center;column-gap:40px;text-align:center}
     <p>A few favourites from recent weddings and events.</p>
   </div>
   <span class="work-label">On Instagram</span>
-  <div class="work">
-    <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfnFOSlMl6E/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DfnFOSlMl6E/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
-    <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdM4f6vqlp4/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DdM4f6vqlp4/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
-    <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdMMJ54s8L7/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DdMMJ54s8L7/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
+  <div class="carousel">
+    <div class="work">
+      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfnFOSlMl6E/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DfnFOSlMl6E/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
+      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdM4f6vqlp4/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DdM4f6vqlp4/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
+      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdMMJ54s8L7/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DdMMJ54s8L7/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
+      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfZgu0Ds6te/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DfZgu0Ds6te/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
+      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeG80G7s-nA/" data-instgrm-version="14" style="margin:0;width:100%;min-width:300px;max-width:400px;border-radius:16px;border:0;background:#fff"><a href="https://www.instagram.com/reel/DeG80G7s-nA/" target="_blank" rel="noopener">Watch on Instagram</a></blockquote></div>
+    </div>
+    <button class="car-btn prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="car-btn next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
   <p class="swipe-hint" aria-hidden="true">swipe for more &rarr;</p>
   <span class="work-label">On TikTok</span>
-  <div class="work">
-    <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7685066772650790164" data-video-id="7685066772650790164" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7685066772650790164" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7685066772650790164?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
-    <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7685316380148731157" data-video-id="7685316380148731157" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7685316380148731157" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7685316380148731157?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
-    <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7705016674130382101" data-video-id="7705016674130382101" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7705016674130382101" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7705016674130382101?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+  <div class="carousel">
+    <div class="work">
+      <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7685066772650790164" data-video-id="7685066772650790164" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7685066772650790164" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7685066772650790164?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+      <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7685316380148731157" data-video-id="7685316380148731157" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7685316380148731157" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7685316380148731157?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+      <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7705016674130382101" data-video-id="7705016674130382101" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7705016674130382101" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7705016674130382101?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+      <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7704722340453666068" data-video-id="7704722340453666068" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7704722340453666068" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7704722340453666068?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+      <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7706261903030357269" data-video-id="7706261903030357269" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7706261903030357269" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7706261903030357269?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+    </div>
+    <button class="car-btn prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="car-btn next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
   <p class="swipe-hint" aria-hidden="true">swipe for more &rarr;</p>
   <div class="actions follow">
@@ -434,6 +455,13 @@ document.querySelectorAll('.covlist>.k,.includes>.k').forEach(k=>{
   k.setAttribute('role','button');k.setAttribute('tabindex','0');k.setAttribute('aria-expanded','false');
   const t=()=>{const b=k.parentElement;const o=b.classList.toggle('open');k.setAttribute('aria-expanded',o)};
   k.addEventListener('click',t);k.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+});
+document.querySelectorAll('.carousel').forEach(c=>{
+  const row=c.querySelector('.work'),p=c.querySelector('.prev'),n=c.querySelector('.next');
+  const step=()=>{const e=row.querySelector('.embed');return e?e.getBoundingClientRect().width+20:row.clientWidth};
+  const upd=()=>{p.disabled=row.scrollLeft<5;n.disabled=row.scrollLeft+row.clientWidth>=row.scrollWidth-5};
+  p.addEventListener('click',()=>row.scrollBy({left:-step()}));n.addEventListener('click',()=>row.scrollBy({left:step()}));
+  row.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();setTimeout(upd,1500);
 });
 document.getElementById('copy').addEventListener('click', async () => {
   const out = document.getElementById('copied');
