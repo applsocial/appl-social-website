@@ -191,7 +191,8 @@ footer{justify-content:center;column-gap:40px;text-align:center}
 .socials a:hover{transform:translateY(-2px)}
 .socials svg{width:22px;height:22px}
 
-.tt-player{display:block;width:100%;max-width:340px;aspect-ratio:9/16;min-height:578px;border:0;border-radius:16px;background:#000;margin-inline:auto}
+.tt-mobile{display:none}
+.tt-player{width:100%;max-width:340px;aspect-ratio:9/16;min-height:578px;border:0;border-radius:16px;background:#000;margin-inline:auto}
 .swipe-hint{display:none}
 @media (max-width:720px){
   .work,.packages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-20px;padding:4px 20px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -199,6 +200,8 @@ footer{justify-content:center;column-gap:40px;text-align:center}
   .work>.embed,.packages>.pkg{flex:0 0 86%;scroll-snap-align:center}
   .packages[hidden]{display:none!important}
   .swipe-hint{display:block;text-align:center;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:6px 0 0}
+  .tt-desktop{display:none!important}
+  .tt-mobile{display:block}
   .tt-player{max-width:none;min-height:0}
   .swipe-hint + .work-label{margin-top:40px}
 }
@@ -249,9 +252,9 @@ footer{justify-content:center;column-gap:40px;text-align:center}
   <p class="swipe-hint" aria-hidden="true">swipe for more &rarr;</p>
   <span class="work-label">On TikTok</span>
   <div class="work">
-    <div class="embed"><iframe class="tt-player" src="https://www.tiktok.com/player/v1/7685066772650790164?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
-    <div class="embed"><iframe class="tt-player" src="https://www.tiktok.com/player/v1/7685316380148731157?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
-    <div class="embed"><iframe class="tt-player" src="https://www.tiktok.com/player/v1/7705016674130382101?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+    <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7685066772650790164" data-video-id="7685066772650790164" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7685066772650790164" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7685066772650790164?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+    <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7685316380148731157" data-video-id="7685316380148731157" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7685316380148731157" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7685316380148731157?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
+    <div class="embed"><blockquote class="tiktok-embed tt-desktop" cite="https://www.tiktok.com/@applsocial/video/7705016674130382101" data-video-id="7705016674130382101" style="margin:0;max-width:400px;min-width:300px"><section><a href="https://www.tiktok.com/@applsocial/video/7705016674130382101" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote><iframe class="tt-player tt-mobile" src="https://www.tiktok.com/player/v1/7705016674130382101?music_info=1&amp;description=1&amp;rel=0" allow="fullscreen" loading="lazy" title="*appl social on TikTok"></iframe></div>
   </div>
   <p class="swipe-hint" aria-hidden="true">swipe for more &rarr;</p>
   <div class="actions follow">
@@ -420,5 +423,6 @@ document.getElementById('copy').addEventListener('click', async () => {
 });
 </script>
 <script async src="https://www.instagram.com/embed.js"></script>
+<script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
