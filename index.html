@@ -53,6 +53,23 @@ a{color:inherit}
 .top nav a{text-decoration:none}
 .top nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 @media (max-width:600px){.top nav{display:none}}
+.top{position:relative}
+.menu-btn{display:none}
+@media (max-width:600px){
+  html{scroll-padding-top:96px}
+  .top{position:sticky;top:0;z-index:20;background:var(--paper)}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:#fff;cursor:pointer}
+  .menu-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;fill:none}
+  .menu-btn path{transition:transform .2s ease,opacity .2s ease;transform-origin:12px 12px}
+  .menu-btn[aria-expanded="true"] .l1{transform:translateY(5px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] .l2{opacity:0}
+  .menu-btn[aria-expanded="true"] .l3{transform:translateY(-5px) rotate(-45deg)}
+  .mobile-menu{position:absolute;top:calc(100% - 6px);right:0;width:min(280px,calc(100vw - 40px));background:var(--paper);border:2px solid var(--ink);border-radius:20px;padding:10px;display:flex;flex-direction:column;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+  .mobile-menu a:not(.btn){display:block;padding:14px 16px;font-weight:900;font-size:1.05rem;letter-spacing:-0.01em;text-decoration:none;border-radius:12px;text-transform:lowercase}
+  .mobile-menu a:not(.btn):active{background:var(--rule)}
+  .mobile-menu .btn{margin-top:6px}
+}
+
 
 /* Hero */
 .hero{padding-block:clamp(48px,10vw,120px) clamp(56px,9vw,104px);display:flex;flex-direction:column;gap:28px}
@@ -243,6 +260,14 @@ footer{justify-content:center;column-gap:40px;text-align:center}
     <a href="#how">How to book</a>
     <a href="#enquire">Enquiries</a>
   </nav>
+  <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg></button>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#work">View my work</a>
+    <a href="#packages">Packages</a>
+    <a href="#how">How to book</a>
+    <a href="#enquire">Enquiries</a>
+    <a class="btn btn-blue" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book on Setmore</a>
+  </div>
 </header>
 
 <main id="top">
@@ -463,6 +488,12 @@ document.querySelectorAll('.carousel').forEach(c=>{
   p.addEventListener('click',()=>row.scrollBy({left:-step()}));n.addEventListener('click',()=>row.scrollBy({left:step()}));
   row.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();setTimeout(upd,1500);
 });
+(()=>{const b=document.querySelector('.menu-btn'),m=document.getElementById('mobile-menu');if(!b)return;
+const set=o=>{m.hidden=!o;b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')};
+b.addEventListener('click',e=>{e.stopPropagation();set(m.hidden)});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+document.addEventListener('click',e=>{if(!m.hidden&&!m.contains(e.target))set(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});})();
 document.getElementById('copy').addEventListener('click', async () => {
   const out = document.getElementById('copied');
   try { await navigator.clipboard.writeText('social@appl.africa'); out.textContent = 'Copied'; }
