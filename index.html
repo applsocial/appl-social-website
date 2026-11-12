@@ -56,7 +56,7 @@ a{color:inherit}
 
 /* Hero */
 .hero{padding-block:clamp(48px,10vw,120px) clamp(56px,9vw,104px);display:flex;flex-direction:column;gap:28px}
-.hero h1{font-size:clamp(3rem,11vw,7.5rem);line-height:.92;letter-spacing:-0.05em}
+.hero h1{font-size:clamp(2.6rem,9vw,6.25rem);line-height:.92;letter-spacing:-0.05em;max-width:12ch}
 .hero h1 .ast{color:var(--pink)}
 .hero .lede{font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.5;color:var(--ink-soft);max-width:36ch}
 .hero .lede strong{color:var(--ink);font-weight:700}
@@ -64,7 +64,7 @@ a{color:inherit}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .tags span{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px 6px;border-radius:999px}
 .t-blue{background:var(--blue-tint);color:var(--blue)} .t-pink{background:var(--pink-tint);color:var(--pink-deep)}
-.t-red{background:var(--red-tint);color:var(--red)} .t-orange{background:var(--orange-tint);color:#8A5E14}
+.t-red{background:var(--red-tint);color:var(--red)} .t-grey{background:var(--rule);color:var(--ink)} .t-orange{background:var(--orange-tint);color:#8A5E14}
 
 section{padding-block:clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
 .sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
@@ -134,6 +134,33 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-
   font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
 footer img{height:22px;width:auto;display:block}
 
+
+.loc{display:inline-flex;align-items:center;gap:8px;padding:9px 18px 8px 14px;border-radius:999px;box-shadow:inset 0 0 0 2px var(--ink);font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.loc svg{width:16px;height:16px;color:var(--pink);flex:none;margin-top:-2px}
+.hero{align-items:center;text-align:center}
+.hero .lede{max-width:40ch}
+.actions,.tags{justify-content:center}
+.sec-head{align-items:center;text-align:center}
+.sec-head p{margin-inline:auto}
+#packages{text-align:center}
+#packages .tabs{margin-inline:auto}
+.tabwrap{display:flex;justify-content:center}
+.pkg{text-align:left}
+.includes{text-align:center}
+.includes li{justify-content:center;text-align:left}
+.covlist{margin-top:32px;border:2px solid var(--ink);border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center}
+.covlist ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.covlist li{font-weight:700;font-size:.9rem;padding:10px 18px 9px;border-radius:999px;background:var(--rule);line-height:1.2}
+.covlist .fine{color:var(--ink-soft);font-size:.92rem;max-width:56ch}
+.step{align-items:center;text-align:center}
+.step p{max-width:34ch}
+#how .actions{justify-content:center}
+.about{grid-template-columns:1fr;gap:20px;justify-items:center;text-align:center}
+.about .body{align-items:center;max-width:60ch}
+.about .big{max-width:20ch;margin-inline:auto}
+.enquire{align-items:center;text-align:center}
+.enquire h2,.enquire p{margin-inline:auto}
+footer{justify-content:center;column-gap:40px;text-align:center}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -151,9 +178,9 @@ footer img{height:22px;width:auto;display:block}
 
 <main id="top">
 <div class="hero">
-  <span class="eyebrow">*appl social · Somerset West, Western Cape</span>
-  <h1>your moment, captured<span class="ast">*</span></h1>
-  <p class="lede">your photographer gets the album. <strong>I get the feed.</strong> Trending reels, aesthetic clips and the candid moments nobody else catches, ready to post while everyone's still talking about it.</p>
+  <span class="loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>Somerset West, Western Cape</span>
+  <h1>from my camera roll to yours<span class="ast">*</span></h1>
+  <p class="lede">Trending reels, aesthetic clips and the candid moments nobody else catches. Ready to post.</p>
   <div class="actions">
     <a class="btn btn-blue" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
@@ -161,7 +188,7 @@ footer img{height:22px;width:auto;display:block}
     <a class="btn btn-line" href="#enquire">Email an enquiry</a>
   </div>
   <div class="tags" aria-label="Events I cover">
-    <span class="t-pink">Weddings</span><span class="t-blue">Launches</span><span class="t-orange">Parties</span><span class="t-red">Matric dances</span><span class="t-blue">Businesses</span>
+    <span class="t-pink">Weddings</span><span class="t-blue">Launches</span><span class="t-orange">Parties</span><span class="t-red">Matric dances</span><span class="t-grey">Businesses</span>
   </div>
 </div>
 
@@ -171,10 +198,10 @@ footer img{height:22px;width:auto;display:block}
     <h2 id="pk-h">find the package that fits</h2>
     <p>Every booking starts with a free 30-minute consultation, so we're on the same page (and the same vibe) from day one.</p>
   </div>
-  <div class="tabs" role="tablist" aria-label="Package type">
+  <div class="tabwrap"><div class="tabs" role="tablist" aria-label="Package type">
     <button role="tab" id="tab-wed" aria-controls="panel-wed" aria-selected="true">Weddings</button>
     <button role="tab" id="tab-evt" aria-controls="panel-evt" aria-selected="false" tabindex="-1">Events</button>
-  </div>
+  </div></div>
   <div class="packages" role="tabpanel" id="panel-wed" aria-labelledby="tab-wed">
     <article class="pkg pink">
       <div class="pkg-top"><span class="pill">Wedding package</span><span class="pill line">10 hours</span></div>
@@ -182,7 +209,7 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R6,500</p>
       <p class="desc">From the first little moments to the dance floor.</p>
       <div class="stats"><div class="stat"><b>300–400+</b><span>raw video clips</span></div><div class="stat"><b>150–200</b><span>raw photos</span></div><div class="stat"><b>40–60</b><span>edited photos</span></div><div class="stat"><b>10–15</b><span>edited vertical reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>getting ready · ceremony · couple &amp; bridal party · venue &amp; details · candid guests · cocktail hour · reception entrances · speeches · cake cutting · first dance · dance floor · behind the scenes</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Everything on the coverage list below, from getting ready to the dance floor.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg blue">
       <div class="pkg-top"><span class="pill">Wedding package</span><span class="pill line">8 hours</span></div>
@@ -190,7 +217,7 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R5,500</p>
       <p class="desc">From the quiet morning moments through to the celebrations.</p>
       <div class="stats"><div class="stat"><b>220–300</b><span>raw video clips</span></div><div class="stat"><b>100–150</b><span>raw photos</span></div><div class="stat"><b>30–50</b><span>edited photos</span></div><div class="stat"><b>5–10</b><span>edited vertical reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>getting ready &amp; bridal details · ceremony · couple &amp; bridal party · décor &amp; venue · candid guests · reception entrances · speeches &amp; key moments (timeline dependent) · behind the scenes</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Anything from the wedding coverage list below, within your 8 hours. You tell me what matters most and I'll focus on that.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg orange">
       <div class="pkg-top"><span class="pill">Wedding package</span><span class="pill line">6 hours</span></div>
@@ -198,7 +225,7 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R4,500</p>
       <p class="desc">A fuller story, from getting ready into the reception.</p>
       <div class="stats"><div class="stat"><b>150–200</b><span>raw video clips</span></div><div class="stat"><b>70–100</b><span>raw photos</span></div><div class="stat"><b>20–40</b><span>edited photos</span></div><div class="stat"><b>3–5</b><span>edited vertical reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>getting ready · venue &amp; décor · ceremony · couple &amp; bridal party · candid guest reactions · behind the scenes · reception (timeline dependent)</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Anything from the wedding coverage list below, within your 6 hours. You tell me what matters most and I'll focus on that.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg red">
       <div class="pkg-top"><span class="pill">Wedding package</span><span class="pill line">4 hours</span></div>
@@ -206,10 +233,15 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R3,500</p>
       <p class="desc">The key moments captured, without full-day coverage.</p>
       <div class="stats"><div class="stat"><b>80–120</b><span>raw video clips</span></div><div class="stat"><b>40–60</b><span>raw photos</span></div><div class="stat"><b>10–20</b><span>edited photos</span></div><div class="stat"><b>1–3</b><span>edited vertical highlight reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>candid behind the scenes · ceremony · couple · bridal party · details · atmosphere (timeline dependent)</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Anything from the wedding coverage list below, within your 4 hours. You tell me what matters most and I'll focus on that.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article>
   </div>
+  <div id="cov-wed"><div class="covlist">
+    <span class="k">What I can capture at your wedding</span>
+    <ul><li>Getting ready</li><li>Bridal details</li><li>Ceremony</li><li>Couple &amp; bridal party</li><li>Venue, décor &amp; details</li><li>Candid guests</li><li>Cocktail hour</li><li>Reception entrances</li><li>Speeches</li><li>Cake cutting</li><li>First dance</li><li>Dance floor</li><li>Behind the scenes</li></ul>
+    <p class="fine">Every wedding package can include all of this. Shorter packages cover what fits into your hours, so we plan the priorities together in your consultation.</p>
+  </div></div>
   <div class="packages" role="tabpanel" id="panel-evt" aria-labelledby="tab-evt" hidden>
     <article class="pkg red">
       <div class="pkg-top"><span class="pill">Event package</span><span class="pill line">6 hours</span></div>
@@ -217,7 +249,7 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R5,500</p>
       <p class="desc">For larger launches, activations and corporate events.</p>
       <div class="stats"><div class="stat"><b>160–220</b><span>raw video clips</span></div><div class="stat"><b>80–120</b><span>raw photos</span></div><div class="stat"><b>30–50</b><span>edited photos</span></div><div class="stat"><b>3–5</b><span>edited vertical reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>setup &amp; behind the scenes · venue, décor &amp; branding · product or service content · guest arrivals &amp; interactions · speakers &amp; entertainment · activations &amp; key moments · candid social content</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Anything from the event coverage list below, within your 6 hours. You tell me what matters most and I'll focus on that.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg blue">
       <div class="pkg-top"><span class="pill">Event package</span><span class="pill line">4 hours</span></div>
@@ -225,7 +257,7 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R4,000</p>
       <p class="desc">Broader, social-first coverage of the full experience.</p>
       <div class="stats"><div class="stat"><b>100–150</b><span>raw video clips</span></div><div class="stat"><b>50–75</b><span>raw photos</span></div><div class="stat"><b>20–30</b><span>edited photos</span></div><div class="stat"><b>2–4</b><span>edited vertical reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>venue &amp; setup · branding &amp; product shots · guest arrivals · candid interactions · speakers or presentations · activations &amp; key moments · behind the scenes</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Anything from the event coverage list below, within your 4 hours. You tell me what matters most and I'll focus on that.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg orange">
       <div class="pkg-top"><span class="pill">Event package</span><span class="pill line">2 hours</span></div>
@@ -233,10 +265,15 @@ footer img{height:22px;width:auto;display:block}
       <p class="price">R2,500</p>
       <p class="desc">For launches, openings, intimate events and smaller activations.</p>
       <div class="stats"><div class="stat"><b>50–80</b><span>raw video clips</span></div><div class="stat"><b>25–40</b><span>raw photos</span></div><div class="stat"><b>10</b><span>edited photos</span></div><div class="stat"><b>1–3</b><span>edited vertical reels</span></div></div>
-      <div class="cov"><span class="k">Coverage</span><p>setup &amp; details · branding &amp; product content · candid guest moments · atmosphere &amp; venue · key event moments</p></div>
+      <div class="cov"><span class="k">Coverage</span><p>Anything from the event coverage list below, within your 2 hours. You tell me what matters most and I'll focus on that.</p></div>
       <a class="btn" href="https://applsocial.setmore.com/klaraappelgryn" target="_blank" rel="noopener">Book a consultation</a>
     </article>
   </div>
+  <div id="cov-evt" hidden><div class="covlist">
+    <span class="k">What I can capture at your event</span>
+    <ul><li>Venue &amp; setup</li><li>Décor &amp; branding</li><li>Product or service content</li><li>Guest arrivals</li><li>Candid interactions</li><li>Speakers &amp; presentations</li><li>Entertainment</li><li>Activations &amp; key moments</li><li>Behind the scenes</li><li>Candid social content</li></ul>
+    <p class="fine">Every event package can include all of this. Shorter packages cover what fits into your hours, so we plan the priorities together in your consultation.</p>
+  </div></div>
   <div class="includes">
     <span class="k">Every package includes</span>
     <ul>
@@ -305,7 +342,7 @@ footer img{height:22px;width:auto;display:block}
 <script>
 
 const tabs=[...document.querySelectorAll('[role=tab]')];
-function sel(tb){tabs.forEach(x=>{const on=x===tb;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+function sel(tb){tabs.forEach(x=>{const on=x===tb;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;document.getElementById(x.id==='tab-wed'?'cov-wed':'cov-evt').hidden=!on;});}
 tabs.forEach((tb,i)=>{tb.addEventListener('click',()=>sel(tb));tb.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus();}});});
 document.getElementById('copy').addEventListener('click', async () => {
   const out = document.getElementById('copied');
