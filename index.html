@@ -125,7 +125,7 @@ section{padding-block:clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
 @media (max-width:720px){.about{grid-template-columns:1fr;gap:24px}}
 
 /* Enquiries */
-.enquire{background:#fff;color:var(--ink);border:3px solid var(--blue);border-radius:32px;margin-block:0 56px;padding:clamp(40px,7vw,80px) clamp(24px,6vw,72px);
+.enquire{background:#fff;color:var(--ink);border:3px solid var(--red);border-radius:32px;margin-block:0 56px;padding:clamp(40px,7vw,80px) clamp(24px,6vw,72px);
   display:flex;flex-direction:column;gap:24px;align-items:flex-start;position:relative;overflow:hidden}
 .enquire .pill{background:var(--blue);color:#fff}
 .enquire h2{font-size:clamp(2.4rem,7vw,4.5rem);line-height:.95;letter-spacing:-0.04em;max-width:12ch;position:relative}
@@ -169,6 +169,11 @@ footer img{height:22px;width:auto;display:block}
 .about .big{max-width:20ch;margin-inline:auto}
 .enquire{align-items:center;text-align:center}
 .enquire h2,.enquire p{margin-inline:auto}
+.enquire>*{align-self:center;text-align:center}
+.enquire h2{max-width:none}
+.enquire .actions{justify-content:center;width:100%}
+.enquire .copied{display:block;width:100%}
+.enquire .copied:empty{display:none}
 footer{justify-content:center;column-gap:40px;text-align:center}
 
 .work{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;justify-items:center;align-items:start}
