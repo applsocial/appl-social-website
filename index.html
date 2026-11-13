@@ -255,6 +255,29 @@ footer .socials a{flex:none}
 @media (max-width:600px){
   footer{flex-direction:column;gap:14px;padding-block:28px 36px}
 }
+
+.enq-form{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px}
+.enq-form .hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+.kind{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.kind legend{width:100%;text-align:center;font-weight:900;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+.kind label{cursor:pointer}
+.kind input{position:absolute;opacity:0}
+.kind label{display:inline-block;font-weight:900;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px 9px;border-radius:999px;box-shadow:inset 0 0 0 2px var(--ink)}
+.kind label:has(input:checked){background:var(--ink);color:#fff}
+.kind label:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:3px}
+.fgrid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;text-align:left}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1 / -1}
+.field>span{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.field>span em{font-style:normal}
+.field small{font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-soft)}
+.field input,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:#fff;border:2px solid var(--rule-strong);border-radius:14px;padding:13px 14px;min-height:50px;width:100%;transition:border-color .15s ease}
+.field textarea{resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--blue)}
+.field.bad input{border-color:var(--red)}
+.form-status{min-height:1.4em;font-weight:700;text-align:center;margin:0}
+.form-status.ok{color:#1E7A46}.form-status.err{color:var(--red)}
+@media (max-width:600px){.fgrid{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -290,7 +313,7 @@ footer .socials a{flex:none}
     <a class="btn btn-blue" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
       Book a free call</a>
-    <a class="btn btn-line" href="#enquire">Email an enquiry</a>
+    <a class="btn btn-line" href="#enquire">Send an enquiry</a>
   </div>
   <div class="tags" aria-label="Events I cover">
     <span class="t-pink">Weddings</span><span class="t-blue">Launches</span><span class="t-orange">Parties</span><span class="t-red">Matric dances</span><span class="t-grey">Businesses</span>
@@ -454,7 +477,34 @@ footer .socials a{flex:none}
   </div>
 </section>
 
-<section id="enquire" class="enquire" aria-labelledby="en-h">
+<section id="enquire" class="form-sec" aria-labelledby="fm-h">
+  <div class="sec-head">
+    <span class="eyebrow">Enquiry form</span>
+    <h2 id="fm-h">interested? <span style="color:var(--blue)">let's chat</span></h2>
+    <p>Fill in your details below and I'll get back to you to chat about your day.</p>
+  </div>
+  <form class="enq-form" id="enq-form" novalidate>
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <fieldset class="kind">
+      <legend>What are we capturing?</legend>
+      <label><input type="radio" name="occasion" value="Wedding" checked> Wedding</label>
+      <label><input type="radio" name="occasion" value="Event"> Event</label>
+    </fieldset>
+    <div class="fgrid">
+      <label class="field"><span data-wed="Partner 1 name &amp; surname" data-evt="Your name &amp; surname">Partner 1 name &amp; surname</span><input name="name_1" type="text" autocomplete="name" required></label>
+      <label class="field"><span data-wed="Partner 2 name &amp; surname" data-evt="Company / event name">Partner 2 name &amp; surname</span><input name="name_2" type="text" required></label>
+      <label class="field"><span>Date of your <em data-wed="wedding" data-evt="event">wedding</em></span><input name="date" type="date" required></label>
+      <label class="field"><span>Venue / where it's happening</span><input name="venue" type="text" required></label>
+      <label class="field"><span>Contact number</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+      <label class="field"><span>Email address</span><input name="email" type="email" autocomplete="email" required></label>
+      <label class="field full"><span>Anything else? <small>(optional)</small></span><textarea name="message" rows="3"></textarea></label>
+    </div>
+    <button class="btn btn-blue" type="submit">Send enquiry</button>
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<section id="email" class="enquire" aria-labelledby="en-h">
   <span class="pill">Just have a question?</span>
   <h2 id="en-h"><span>email</span> me for enquiries</h2>
   <p>Send your questions to the address below. Heads up: I don't accept DMs, so my inbox is the place to be.</p>
@@ -505,6 +555,25 @@ b.addEventListener('click',e=>{e.stopPropagation();set(m.hidden)});
 m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
 document.addEventListener('click',e=>{if(!m.hidden&&!m.contains(e.target))set(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});})();
+(()=>{const f=document.getElementById('enq-form');if(!f)return;
+const KEY='WEB3FORMS_KEY',st=document.getElementById('form-status'),btn=f.querySelector('button[type=submit]');
+const swap=()=>{const w=f.occasion.value==='Wedding';f.querySelectorAll('[data-wed]').forEach(e=>e.textContent=w?e.dataset.wed:e.dataset.evt);};
+f.querySelectorAll('input[name=occasion]').forEach(r=>r.addEventListener('change',swap));
+f.addEventListener('submit',async e=>{e.preventDefault();st.className='form-status';st.textContent='';
+  let ok=true;f.querySelectorAll('[required]').forEach(i=>{const bad=!i.value.trim()||(i.type==='email'&&!/^\S+@\S+\.\S+$/.test(i.value));i.closest('.field').classList.toggle('bad',bad);if(bad)ok=false;});
+  if(!ok){st.classList.add('err');st.textContent='Please fill in all the details above.';return;}
+  if(f.botcheck.checked)return;
+  const w=f.occasion.value==='Wedding',d=new FormData(f),get=k=>(d.get(k)||'').toString().trim();
+  const lines=[['Occasion',get('occasion')],[w?'Partner 1':'Name',get('name_1')],[w?'Partner 2':'Company / event',get('name_2')],['Date',get('date')],['Venue',get('venue')],['Phone',get('phone')],['Email',get('email')],['Message',get('message')||'-']];
+  if(KEY.startsWith('WEB3')){location.href='mailto:social@appl.africa?subject='+encodeURIComponent('*appl social enquiry: '+get('name_1'))+'&body='+encodeURIComponent(lines.map(l=>l[0]+': '+l[1]).join('\n'));return;}
+  btn.disabled=true;btn.textContent='Sending…';
+  try{const payload={access_key:KEY,subject:'New *appl social enquiry: '+get('name_1')+(w?' & '+get('name_2'):''),from_name:'*appl social website',replyto:get('email')};lines.forEach(l=>payload[l[0]]=l[1]);
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
+    const j=await r.json();if(!j.success)throw 0;
+    f.reset();swap();st.classList.add('ok');st.textContent='Thank you! Your enquiry is on its way. I\'ll be in touch soon.';}
+  catch(_){st.classList.add('err');st.textContent='Something went wrong. Please email social@appl.africa instead.';}
+  finally{btn.disabled=false;btn.textContent='Send enquiry';}
+});})();
 document.getElementById('copy').addEventListener('click', async () => {
   const out = document.getElementById('copied');
   try { await navigator.clipboard.writeText('social@appl.africa'); out.textContent = 'Copied'; }
