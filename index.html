@@ -607,7 +607,7 @@ m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
 document.addEventListener('click',e=>{if(!m.hidden&&!m.contains(e.target))set(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});})();
 (()=>{const f=document.getElementById('enq-form');if(!f)return;
-const KEY='WEB3FORMS_KEY',st=document.getElementById('form-status'),btn=f.querySelector('button[type=submit]');
+const KEY='c830dfa1-406a-465d-bcf0-15f1f104c07b',st=document.getElementById('form-status'),btn=f.querySelector('button[type=submit]');
 const PK={Wedding:['the basics (4h)','the highlights (6h)','the photo dump (8h)','the married era (10h)'],Event:['the drop in (2h)','the hard launch (4h)','the full POV (6h)']};
 const swap=()=>{const w=f.occasion.value==='Wedding';f.querySelectorAll('[data-wed]').forEach(e=>e.textContent=w?e.dataset.wed:e.dataset.evt);f.package.innerHTML='<option value="">Not sure yet</option>'+PK[f.occasion.value].map(p=>'<option>'+p+'</option>').join('');};
 swap();
