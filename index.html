@@ -5,9 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>*appl social</title>
 <meta name="description" content="*appl social: wedding and event content creation in Somerset West, Western Cape. Packages, booking and enquiries.">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEBP6BB959"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEBP6BB959"></script><div class="cookie-bar" id="cookie-bar" role="region" aria-label="Cookie notice" hidden>
+  <p>This site uses cookies to see how visitors find and use it. No personal details are sold or shared.</p>
+  <div class="cookie-actions"><button type="button" class="btn btn-line" data-ck="no">No thanks</button><button type="button" class="btn btn-blue" data-ck="ok">OK</button></div>
+</div>
+
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+var _ck=null;try{_ck=localStorage.getItem('appl_cookies')}catch(e){}
+gtag('consent','default',{analytics_storage:_ck==='no'?'denied':'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
 gtag('js',new Date());gtag('config','G-TEBP6BB959');
 </script>
 <style>
@@ -311,6 +317,12 @@ footer .socials a{flex:none}
 .includes:not(.open)>ul{display:none!important}
 .includes{gap:20px}
 @media (max-width:720px){.includes ul{gap:6px!important}.includes li{font-size:.74rem!important;padding:7px 11px 6px!important}}
+
+.cookie-bar{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:50;width:min(720px,calc(100% - 32px));background:#fff;border:2px solid var(--ink);border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:16px;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+.cookie-bar p{font-size:.88rem;line-height:1.45;margin:0;flex:1}
+.cookie-actions{display:flex;gap:8px;flex:none}
+.cookie-bar .btn{min-height:42px;padding:10px 18px 8px;font-size:.72rem}
+@media (max-width:600px){.cookie-bar{flex-direction:column;align-items:stretch;text-align:center;gap:12px}.cookie-actions{justify-content:center}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -620,6 +632,10 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a|
   else if(h.startsWith('mailto:'))gtag('event','email_click');
   else if(/instagram\.com|tiktok\.com|facebook\.com/.test(h))gtag('event','social_click',{platform:(h.match(/instagram|tiktok|facebook/)||[''])[0]});
 });
+(()=>{const b=document.getElementById('cookie-bar');if(!b)return;let s=null;try{s=localStorage.getItem('appl_cookies')}catch(e){}
+if(!s)b.hidden=false;
+b.querySelectorAll('[data-ck]').forEach(btn=>btn.addEventListener('click',()=>{const v=btn.dataset.ck;try{localStorage.setItem('appl_cookies',v)}catch(e){}
+  if(v==='no'&&typeof gtag==='function')gtag('consent','update',{analytics_storage:'denied'});b.hidden=true;}));})();
 document.getElementById('copy').addEventListener('click', async () => {
   const out = document.getElementById('copied');
   try { await navigator.clipboard.writeText('social@appl.africa'); out.textContent = 'Copied'; }
