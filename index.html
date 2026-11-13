@@ -278,6 +278,15 @@ footer .socials a{flex:none}
 .form-status{min-height:1.4em;font-weight:700;text-align:center;margin:0}
 .form-status.ok{color:#1E7A46}.form-status.err{color:var(--red)}
 @media (max-width:600px){.fgrid{grid-template-columns:1fr}}
+
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#8F2A23}
+.btn-yellow{background:var(--orange);color:var(--ink)}
+.btn-yellow:hover{background:#C78B26}
+#email.enquire{max-width:760px;margin-inline:auto;padding:clamp(28px,5vw,44px) clamp(20px,4vw,40px);gap:16px;border-radius:24px}
+#email.enquire h2{font-size:clamp(1.9rem,4.5vw,2.75rem)}
+#email.enquire p{font-size:1rem}
+#email.enquire .addr{font-size:clamp(1.05rem,2.6vw,1.35rem)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -300,7 +309,7 @@ footer .socials a{flex:none}
     <a href="#how">How to book</a>
     <a href="#about">About</a>
     <a href="#enquire">Enquiries</a>
-    <a class="btn btn-blue" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a free call</a>
+    <a class="btn btn-yellow" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a free call</a>
   </div>
 </header>
 
@@ -310,7 +319,7 @@ footer .socials a{flex:none}
   <h1>from my camera roll to <span class="ast">*</span>yours</h1>
   <p class="lede">Trending short-form videos, aesthetic clips and the candid moments nobody else catches. Ready to post.</p>
   <div class="actions">
-    <a class="btn btn-blue" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">
+    <a class="btn btn-yellow" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
       Book a free call</a>
     <a class="btn btn-line" href="#enquire">Send an enquiry</a>
@@ -459,7 +468,7 @@ footer .socials a{flex:none}
     <div class="step"><span class="num" style="color:var(--red)">03</span><h3>let's chat</h3><p>We talk about your event, timeline and content needs, and lock in the right package.</p></div>
   </div>
   <div class="actions" style="margin-top:40px">
-    <a class="btn btn-blue" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a free call</a>
+    <a class="btn btn-yellow" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a free call</a>
   </div>
 </section>
 
@@ -499,7 +508,7 @@ footer .socials a{flex:none}
       <label class="field"><span>Email address</span><input name="email" type="email" autocomplete="email" required></label>
       <label class="field full"><span>Anything else? <small>(optional)</small></span><textarea name="message" rows="3"></textarea></label>
     </div>
-    <button class="btn btn-blue" type="submit">Send enquiry</button>
+    <button class="btn btn-red" type="submit">Send enquiry</button>
     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
   </form>
 </section>
