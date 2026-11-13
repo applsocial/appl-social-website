@@ -114,10 +114,10 @@ section{padding-block:clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
 .stat{background:var(--paper);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px}
 .stat b{font-weight:900;font-size:1.35rem;line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
 .stat.wide{grid-column:1 / -1}
-#panel-wed .stats{grid-template-columns:1fr}
-#panel-wed .stat{align-items:center;text-align:center;gap:6px;padding:16px 12px}
-#panel-wed .stat b{font-size:1.6rem;white-space:nowrap}
-#panel-wed .stat span{font-size:.8rem}
+#panel-wed .stats,#panel-evt .stats{grid-template-columns:1fr}
+#panel-wed .stat,#panel-evt .stat{align-items:center;text-align:center;gap:6px;padding:16px 12px}
+#panel-wed .stat b,#panel-evt .stat b{font-size:1.6rem;white-space:nowrap}
+#panel-wed .stat span,#panel-evt .stat span{font-size:.8rem}
 .stat small{display:block;font-weight:400;font-size:.75rem;color:var(--ink-soft);margin-top:2px}
 .stat span{font-weight:700;font-size:.78rem;line-height:1.25}
 .cov{border-top:2px solid var(--c);padding-top:14px;display:flex;flex-direction:column;gap:6px;font-size:.88rem;line-height:1.5}
@@ -170,7 +170,7 @@ footer img{height:22px;width:auto;display:block}
 #packages .tabs{margin-inline:auto}
 .tabwrap{display:flex;justify-content:center}
 .pkg{text-align:center}
-.pkg .pkg-top{justify-content:center}
+.pkg .pkg-top{justify-content:center;flex-direction:column;align-items:center;gap:8px}
 .pkg .stat{align-items:center;text-align:center}
 .includes{text-align:center}
 .includes ul{max-width:760px;margin-inline:auto;width:100%;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));column-gap:40px}
@@ -431,21 +431,21 @@ footer .socials a{flex:none}
       <h3>the full POV</h3>
       <p class="price">R5,500</p>
       <p class="desc">The whole experience from every angle, for bigger launches, activations and corporate events.</p>
-      <div class="stats"><div class="stat"><b>160–220</b><span>raw video clips</span></div><div class="stat"><b>80–120</b><span>raw photos</span></div><div class="stat"><b>30–50</b><span>edited photos</span></div><div class="stat"><b>3–5</b><span>edited short-form videos</span></div></div>
+      <div class="stats"><div class="stat wide"><b>240+</b><span>raw content<small>video clips &amp; photos</small></span></div><div class="stat"><b>3–5+</b><span>edited short-form videos</span></div><div class="stat"><b>30–50</b><span>edited photos</span></div></div>
       <a class="btn" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg blue">
       <div class="pkg-top"><span class="pill">Event package</span><span class="pill line">4 hours</span></div>
       <h3>the hard launch</h3>
       <p class="price">R4,000</p>
       <p class="desc">Make it official. Social-first content for launches that need to be seen.</p>
-      <div class="stats"><div class="stat"><b>100–150</b><span>raw video clips</span></div><div class="stat"><b>50–75</b><span>raw photos</span></div><div class="stat"><b>20–30</b><span>edited photos</span></div><div class="stat"><b>2–4</b><span>edited short-form videos</span></div></div>
+      <div class="stats"><div class="stat wide"><b>150+</b><span>raw content<small>video clips &amp; photos</small></span></div><div class="stat"><b>2–4+</b><span>edited short-form videos</span></div><div class="stat"><b>20–30</b><span>edited photos</span></div></div>
       <a class="btn" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a consultation</a>
     </article><article class="pkg orange">
       <div class="pkg-top"><span class="pill">Event package</span><span class="pill line">2 hours</span></div>
       <h3>the drop in</h3>
       <p class="price">R2,500</p>
       <p class="desc">In, out and post-ready. Perfect for openings, pop-ups and intimate events.</p>
-      <div class="stats"><div class="stat"><b>50–80</b><span>raw video clips</span></div><div class="stat"><b>25–40</b><span>raw photos</span></div><div class="stat"><b>10</b><span>edited photos</span></div><div class="stat"><b>1–3</b><span>edited short-form videos</span></div></div>
+      <div class="stats"><div class="stat wide"><b>75+</b><span>raw content<small>video clips &amp; photos</small></span></div><div class="stat"><b>1–3+</b><span>edited short-form videos</span></div><div class="stat"><b>10</b><span>edited photos</span></div></div>
       <a class="btn" href="https://calendar.app.google/tfxDeQ86ZU169LX7A" target="_blank" rel="noopener">Book a consultation</a>
     </article>
   </div>
