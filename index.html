@@ -623,7 +623,7 @@ f.addEventListener('submit',async e=>{e.preventDefault();st.className='form-stat
   try{const payload={access_key:KEY,subject:'New *appl social enquiry: '+get('name_1')+(w?' & '+get('name_2'):''),from_name:'*appl social website',replyto:get('email')};lines.forEach(l=>payload[l[0]]=l[1]);
     const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
     const j=await r.json();if(!j.success)throw 0;
-    if(typeof gtag==='function')gtag('event','generate_lead',{method:'enquiry_form',occasion:f.occasion.value});f.reset();swap();st.classList.add('ok');st.textContent='Thank you! Your enquiry is on its way. I\'ll be in touch soon.';}
+    if(typeof gtag==='function')gtag('event','generate_lead',{method:'enquiry_form',occasion:f.occasion.value});f.reset();swap();st.classList.add('ok');st.textContent='Thank you! Your enquiry has been sent. I\'ll be in touch soon.';}
   catch(_){st.classList.add('err');st.textContent='Something went wrong. Please email social@appl.africa instead.';}
   finally{btn.disabled=false;btn.textContent='Send enquiry';}
 });})();
