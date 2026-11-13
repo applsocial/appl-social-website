@@ -122,11 +122,11 @@ section{padding-block:clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
 .stat span{font-weight:700;font-size:.78rem;line-height:1.25}
 .cov{border-top:2px solid var(--c);padding-top:14px;display:flex;flex-direction:column;gap:6px;font-size:.88rem;line-height:1.5}
 .k{font-weight:900;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
-.includes{margin-top:32px;background:var(--ink);color:#fff;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px}
+.includes{margin-top:20px;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px}
 .includes ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4px 32px}
-.includes li{font-weight:700;padding:12px 0;border-top:1px solid #4A4A52;display:flex;gap:14px;align-items:baseline}
+.includes li{font-weight:700;padding:12px 0;border-top:1px solid var(--rule);display:flex;gap:14px;align-items:baseline}
 .includes i{font-style:normal;font-weight:900;font-size:1.3rem}
-.includes .fine{color:var(--rule-strong);font-size:.85rem}
+.includes .fine{color:var(--ink-soft);font-size:.85rem}
 
 
 /* Steps */
@@ -184,6 +184,7 @@ footer img{height:22px;width:auto;display:block}
 .covlist li.c-orange{background:var(--orange-tint);color:#8A5E14}
 .covlist li.c-red{background:var(--red-tint);color:var(--red)}
 .plus-note{margin-top:20px}
+.covlist{margin-top:20px}
 .plus-note .fine{font-size:.95rem;line-height:1.6}
 .covlist .fine{color:var(--ink-soft);font-size:.92rem;max-width:56ch}
 .step{align-items:center;text-align:center}
@@ -298,6 +299,12 @@ footer .socials a{flex:none}
 .sec-rule{border:0;border-top:3px solid var(--ink);margin:0 0 clamp(40px,6vw,64px)}
 #enquire.form-sec{padding-bottom:clamp(40px,6vw,64px)}
 .form-status:empty{display:none}
+
+.includes ul,.includes ul[class]{display:flex!important;flex-wrap:wrap;justify-content:center;gap:10px!important;max-width:none;grid-template-columns:none}
+.includes li{display:inline-block!important;border-top:0!important;padding:10px 18px 9px!important;border-radius:999px;background:var(--rule);font-weight:700;font-size:.9rem!important;line-height:1.2;text-align:center}
+.includes li i{display:none}
+.includes{gap:20px}
+@media (max-width:720px){.includes ul{gap:6px!important}.includes li{font-size:.74rem!important;padding:7px 11px 6px!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -464,7 +471,6 @@ footer .socials a{flex:none}
       <li><i style="color:var(--pink)">*</i>Raw content within 24–48 hours</li>
       <li><i style="color:var(--blue)">*</i>Edited content within 5 working days</li>
     </ul>
-    <p class="fine">Raw quantities are approximate.</p>
   </div>
   <div class="covlist plus-note">
     <span class="k">What the + means</span>
